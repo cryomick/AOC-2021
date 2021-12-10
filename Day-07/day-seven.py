@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 def parseFile(filename):
     with open(filename) as f:
         ret = [int(x) for x in f.readline().strip().strip('\n').split(',')]
@@ -34,12 +36,12 @@ def func(filename, computer):
 
 def part_one(filename):
     target, minimum_cost = func(filename, compute_cost_part_one)
-    print(f"Part one: Cost to target {target} is {minimum_cost}")
+    print(f"Part one: {minimum_cost}")
 
 
 def part_two(filename):
     target, minimum_cost = func(filename, compute_cost_part_two)
-    print(f"Part two: Cost to target {target} is {minimum_cost}")
+    print(f"Part two: {minimum_cost}")
 
 
 def main():

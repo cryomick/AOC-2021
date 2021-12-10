@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 def parseFile(filename, diag=False):
     coords = []
     with open(filename) as f:

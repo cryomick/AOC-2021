@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 
 def get_params(input_list):
     output_max = ""
@@ -53,20 +54,21 @@ def generate_list(filename):
         return [list(x.strip()) for x in f.readlines()]
 
 
-def main(filename):
+def part_one(filename):
     gamma, epsilon = get_params(generate_list(filename))
-    print(f"Gamma: {gamma}")
-    print(f"Epsilon: {epsilon}")
-    print(f"Answer: {gamma * epsilon}")
+    print(f"Part one: {gamma * epsilon}")
+
+
+def part_two(filename):
     o2, co2 = get_params_part_two(generate_list(filename))
-    print(f"{o2 = }")
-    print(f"{co2 = }")
-    print(f"Answer: {o2 * co2 }")
+    print(f"Part two: {o2 * co2 }")
+
+
+def main():
+    filename = "input.txt"
+    part_one(filename)
+    part_two(filename)
 
 
 if __name__ == '__main__':
-    import sys
-    if len(sys.argv) != 2:
-        print("Usage: python3 day_three.py <input_file>")
-        sys.exit(1)
-    main(sys.argv[1])
+    main()

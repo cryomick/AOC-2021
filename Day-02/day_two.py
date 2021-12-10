@@ -1,7 +1,10 @@
+#!/usr/bin/python3
+
 class Pos:
     horizontal = 0
     vertical = 0
     aim = 0
+
 
 def compute_position(position: Pos, direction: str, distance: int):
     if direction == 'forward':
@@ -10,6 +13,7 @@ def compute_position(position: Pos, direction: str, distance: int):
         position.vertical -= distance
     elif direction == 'down':
         position.vertical += distance
+
 
 def compute_position_part_two(position: Pos, direction: str, distance: int):
     if direction == 'forward':
@@ -20,6 +24,7 @@ def compute_position_part_two(position: Pos, direction: str, distance: int):
     elif direction == 'down':
         position.aim += distance
 
+
 def get_instructions(filename: str):
     ret = []
     with open(filename, 'r') as f:
@@ -28,6 +33,7 @@ def get_instructions(filename: str):
             items = line.split()
             ret.append((items[0], int(items[1])))
     return ret
+
 
 def main():
     instructions = get_instructions('input.txt')
@@ -38,6 +44,7 @@ def main():
         compute_position_part_two(position_two, instruction[0], instruction[1])
     print(f"Part one: {position_one.horizontal * position_one.vertical}")
     print(f"Part two: {position_two.horizontal * position_two.vertical}")
+
 
 if __name__ == "__main__":
     main()

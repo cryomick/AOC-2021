@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 class Cell:
     value: int
     marked: bool
@@ -78,7 +80,6 @@ def part_one():
         for grid in grids:
             grid.set_marked_if_present(move)
             if grid.has_won():
-                grid.print()
                 print(f"Part One Solution is {grid.sum() * move}")
                 return
 
@@ -99,7 +100,6 @@ def part_two():
             grid.set_marked_if_present(move)
             if grid.has_won():
                 if len(grids) == 1:
-                    grid.print()
                     print(f"Part Two Solution is {grid.sum() * move}")
                     return
                 else:

@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 def age(listFishes):
     back_list = [0] * 9
     back_list[8] += listFishes[0]
